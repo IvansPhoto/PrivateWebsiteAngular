@@ -6,28 +6,43 @@ nav {
 
   a {
     text-transform: uppercase;
-    font-weight: 500;
   }
 }
 
 #NavDesktop {
-  display: flex;
-  align-content: center;
-  justify-content: space-around;
-  align-items: center;
-  border-bottom: 0.1rem solid var(--colorRed);
-  min-height: #{$footer-min-height};
+	display: flex;
+	align-content: center;
+	justify-content: space-evenly;
+	align-items: center;
+	border-bottom: 0.1rem solid var(--colorRed);
+	min-height: $footer-min-height;
 }
 
 #NavMobile {
-  position: fixed;
-  top: 0;
-  right: 0;
-  height: 100vh;
-  max-width: 35vw;
-  min-width: 20rem;
-  display: flex;
-  flex-direction: column;
+	position: fixed;
+	top: 0;
+	right: 0;
+	padding: 2rem 0 0 1rem;
+	display: none;
+	flex-direction: column;
+	width: 19rem;
+	height: 100vh;
+	border-left: 0.1rem solid var(--colorRed);
+	background-color: var(--colorBackground);
+	z-index: 1;
+	gap: 1rem;
+}
+
+.nav-hide{
+	display: flex !important;
+}
+
+
+.nav-toggler {
+	position: fixed;
+	top: 1rem;
+	right: 1rem;
+	z-index: 10;
 }
 
 .button {

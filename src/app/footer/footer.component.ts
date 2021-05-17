@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FooterComponent implements OnInit {
 
+  today: string = new Date().getFullYear().toString();
+
   constructor() { }
 
   ngOnInit(): void {

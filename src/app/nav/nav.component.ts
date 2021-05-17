@@ -8,6 +8,13 @@ import RouteNames from "../../Helpers/RouteNames";
 })
 export class NavComponent implements OnInit {
 
+
+	IsShown: boolean = false;
+
+	ShowHide(): void {
+		this.IsShown = !this.IsShown;
+	}
+
   constructor() { }
 
   ngOnInit(): void {  }
