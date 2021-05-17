@@ -1,0 +1,9 @@
+@import "./scss/scss-variables";
+
+footer {
+  min-height: $footer-min-height;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-top: 0.1rem solid var(--colorFont);
+}
