@@ -1,4 +1,35 @@
-<main id="Main">
-  <h1>Contacts</h1>
+<main id="Contacts">
+		<h1>Contacts</h1>
+		<div id="Address">
+			<p>You can reach me on social media:</p>
+			<div class="sm-links">
+<!--				TODO: Add icons.-->
+				<a href="https://vk.com/ivanpavlovphoto">VK</a>
+				<a href="https://www.facebook.com/profile.php?id=1835855816">FB</a>
+				<a href="https://www.linkedin.com/in/ivanpavlovnik/">Linkedin</a>
+			</div>
+		</div>
+
+		<form netlify name="contact" netlify-honeypot="bot-field" #contacts="ngForm" (ngSubmit)="OnSubmit()">
+			<label style="display: none">Don’t fill this out if you're human: <input name="bot-field" type="text"></label>
+
+			<label for="Name">Name</label>
+			<input id="Name" type="text" name="name" placeholder="Name / Surname / Fullname" [(ngModel)]="contactForm.Name" required>
+
+			<label for="Email">Email</label>
+			<input id="Email" type="email" name="email" placeholder="adress@domain.com" required>
+
+			<label for="Telephone">Phone</label>
+			<input id="Telephone" type="tel" name="telephone" placeholder="+** **** *******" />
+
+			<label for="Role">Role</label>
+			<input id="Role" type="text" name="role" placeholder="HR / Manager / Developer"/>
+
+			<label for="Message">Message</label>
+			<textarea id="Message" name="message" placeholder="Input your message" autocomplete="off" rows="4" cols="50" ></textarea>
+
+			<div data-netlify-recaptcha="true"></div>
+
+			<button class="button-contact"><p>Send</p></button>
+		</form>
 </main>
-<router-outlet></router-outlet>

@@ -10,6 +10,7 @@ import { FooterComponent } from './footer/footer.component';
 import { ContactsComponent } from './contacts/contacts.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { DevSkillsComponent } from './dev-skills/dev-skills.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -24,8 +25,9 @@ import { DevSkillsComponent } from './dev-skills/dev-skills.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
-  ],
+    AppRoutingModule,
+		FormsModule
+	],
   providers: [],
   bootstrap: [AppComponent]
 })
