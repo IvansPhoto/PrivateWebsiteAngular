@@ -40,9 +40,17 @@ nav {
 
 .nav-toggler {
 	position: fixed;
-	top: 1rem;
+	top: 0.75rem;
 	right: 1rem;
 	z-index: 10;
+	border: none;
+	border-radius: 0.5rem;
+	text-transform: uppercase;
+	margin: 0;
+	padding: 0.5em;
+	color: var(--colorBackground);
+	background-color: var(--colorRed);
+	box-shadow: none;
 }
 
 .button {

@@ -15,6 +15,10 @@ export class NavComponent implements OnInit {
 		this.IsShown = !this.IsShown;
 	}
 
+	ButtonText(): string {
+		return this.IsShown ? "Close" : "Open";
+	}
+
   constructor() { }
 
   ngOnInit(): void {  }
