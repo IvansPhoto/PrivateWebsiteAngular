@@ -21,3 +21,11 @@ body {
 main {
   min-height: calc(100vh - #{$footer-min-height * 2});
 }
+
+.ng-valid[required], .ng-valid.required  {
+	border-bottom-color: var(--colorFont) !important;
+}
+
+.ng-invalid:not(form)  {
+	border-bottom-color: var(--colorRed) !important;
+}

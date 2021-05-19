@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Directive, Component, OnInit} from '@angular/core';
 import ContactForm from "../../Models/ContactForm";
 
 @Component({
@@ -8,43 +8,33 @@ import ContactForm from "../../Models/ContactForm";
 })
 export class ContactsComponent implements OnInit {
 
-	contactForm: ContactForm = new ContactForm(undefined, undefined, "+** *** *******", null, null);
+	contactForm: ContactForm = new ContactForm(null, null, null, null, null);
+
+	submitted: boolean = false;
 
 	constructor() {
 	}
 
 	OnSubmit(): void {
+		fetch('/', {
+			method: 'POST',
+			headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+			body: this.CreateURLSearchParams().toString()
+		})
+			.then(() => this.submitted = true)
+			.catch((error) => alert(error));
+	}
 
+	CreateURLSearchParams(): URLSearchParams {
+		const urlSearchParams = new URLSearchParams();
+		if (this.contactForm.Name !== null) urlSearchParams.append("Name", this.contactForm.Name)
+		if (this.contactForm.Email !== null) urlSearchParams.append("Email", this.contactForm.Email)
+		if (this.contactForm.Role !== null) urlSearchParams.append("Name", this.contactForm.Role)
+		if (this.contactForm.Phone !== null) urlSearchParams.append("Phone", this.contactForm.Phone)
+		if (this.contactForm.Message !== null) urlSearchParams.append("Message", this.contactForm.Message)
+		return urlSearchParams;
 	}
 
 	ngOnInit(): void {
 	}
-
-	// createFormDataObj(data: any): any {
-	// 	const formData = new FormData();
-	// 	for (const key of Object.keys(data)) {
-	// 		formData.append(key, data[key]);
-	// 	}
-	// 	return formData;
-	// }
-	//
-	// handleSubmit() {
-	// 	const data = {
-	// 		'form-name': 'contact',
-	// 		name: this.userName,
-	// 		email: this.userEmail,
-	// 		telephone: this.userTelephone,
-	// 		role: this.userRole,
-	// 		message: this.userMessage
-	// 	};
-	//
-	// 	fetch('/', {
-	// 		method: 'POST',
-	// 		headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-	// 		body: new URLSearchParams(this.createFormDataObj(data)).toString()
-	// 	})
-	// 		.then(() => this.$router.push('response'))
-	// 		.catch((error) => alert(error));
-	// }
-
 }

@@ -1,8 +1,8 @@
 export default class ContactForm {
-	constructor(public Name: string | null | undefined,
-							public Email: string | null | undefined,
-							public Phone: string | null | undefined,
-							public Role: string | null | undefined,
-							public Message: string | null | undefined) {
+	constructor(public Name: string | null,
+							public Email: string | null,
+							public Phone: string | null,
+							public Role: string | null,
+							public Message: string | null) {
 	}
 }
